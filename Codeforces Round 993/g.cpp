@@ -27,23 +27,27 @@ void solve() {
         ll xq;cin >> xq;
         bool found = false;
 
-        for(ll i=1;i<=xq && !found;i++) {
-            if(((xq)%i+i)%i==0) {
-                if(xq>0
-                ){
-                if((A.find(i)!=A.end() && B.find((xq)/i)!=B.end()) || (A.find(xq/i)!=A.end() && B.find(i)!=B.end())) {
+        for(ll i=1;i*i<=abs(xq) && !found;i++) {
+            if(xq % i == 0) {
+                if(A.find(i) != A.end() && B.find(xq/i) != B.end()) {
                     cout << "YES\n";
                     found = true;
-                    break;
                 }
-            }else{
-                if((A.find(-i)!=A.end() && B.find((-xq)/i)!=B.end()) || (A.find(-xq/i)!=A.end() && B.find(-i)!=B.end())) {
+                else if(A.find(xq/i) != A.end() && B.find(i) != B.end()) {
                     cout << "YES\n";
                     found = true;
-                    break;
                 }
+                else if(A.find(-i) != A.end() && B.find(-xq/i) != B.end()) {
+                    cout << "YES\n";
+                    found = true;
+                }
+                else if(A.find(-xq/i) != A.end() && B.find(-i) != B.end()) {
+                    cout << "YES\n";
+                    found = true;
                 }
             }
+                
+                
         }
         if(!found) {
             cout << "NO\n";
