@@ -1,13 +1,24 @@
 #include <bits/stdc++.h>
 
-#define ll long double
-
 using namespace std;
 
 
 
 
 void solve() {
+    int n;cin>>n;
+    int max =0;
+    int indiceMax = 0;
+    for(int i=1;i<=n;i++){
+        int a;cin>>a;
+        int b;cin>>b;
+        if(a<=10 && b>max){
+            max = b;
+            indiceMax = i;
+        }
+    }
+
+    cout<<indiceMax<<endl;
 }
 
 int main() {
