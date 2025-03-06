@@ -8,6 +8,13 @@ using namespace std;
 
 
 void solve() {
+    ll n,k;cin>>n>>k;
+    ll ans=k;
+    while(k>0.0001){
+        k/=n;
+        ans+=k;
+    }
+    cout<<(int)floor(ans)<<endl;
 }
 
 int main() {
